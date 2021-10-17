@@ -1,0 +1,12 @@
+Note:
+
+The maximum number of members that can be added to a group varies by FortiOS and model, there is a table at https://docs.fortinet.com/max-value-table.
+For the Fortigate-60E looks like the number is 600, which seems pretty generous for a smaller environment.
+This code could be added to the beginning of the runbook to throw an error log message when the address group was 'full':
+
+Get-FGTFirewallAddressGroup -name "Blocked Address Group" | fl member > members.txt
+if ((Get-Content members.txt | select-string -pattern "@").length -gt 599) {Write-Host "Error: 600 or more members of this firewall address group, create a new group."}
+
+You could add more code to create and rotate address groups, or just monitor for the word "Error" in your Azure Automation job logs.
+
+(Credit: Thank you @jesusMamoros for this tip.)
