@@ -8,4 +8,4 @@ AA_RegistryWebManagement / (Windows) Enables and starts remote administration of
 
 Start-DefaultWebSite / (Windows) Starts the default web site on an IIS computer via an Azure Monitor alert action group
 
-FGT-add-IP-to-group / (Windows) Used as a SOAR action with Azure Sentinel, adds an IP address to a blocked address group in the firewall
+FGT-add-IP-to-group / (Windows) Used as a SOAR action with Azure Sentinel, adds an IP address to a blocked address group in the firewall (SEE .TXT FILE FOR NOTES)
